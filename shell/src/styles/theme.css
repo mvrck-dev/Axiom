@@ -1,0 +1,266 @@
+@import url('https://fonts.cdnfonts.com/css/opendyslexic');
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-size: 16px;
+  --background: #EEECEA;
+  --foreground: #1A1A18;
+  --card: #FFFFFF;
+  --card-foreground: #1A1A18;
+  --popover: #FFFFFF;
+  --popover-foreground: #1A1A18;
+  --primary: #1A1A18;
+  --primary-foreground: #FFFFFF;
+  --secondary: #E4E2DF;
+  --secondary-foreground: #1A1A18;
+  --muted: #E4E2DF;
+  --muted-foreground: #8A8880;
+  --accent: #1A1A18;
+  --accent-foreground: #FFFFFF;
+  --destructive: #C0392B;
+  --destructive-foreground: #FFFFFF;
+  --border: rgba(0, 0, 0, 0.07);
+  --input: #E4E2DF;
+  --input-background: #E4E2DF;
+  --switch-background: #C0BDB8;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: rgba(26, 26, 24, 0.2);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --radius: 0.75rem;
+  --sidebar: #F4F2EF;
+  --sidebar-foreground: #1A1A18;
+  --sidebar-primary: #1A1A18;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #E8E6E3;
+  --sidebar-accent-foreground: #1A1A18;
+  --sidebar-border: rgba(0, 0, 0, 0.06);
+  --sidebar-ring: rgba(26, 26, 24, 0.2);
+}
+
+.dark {
+  --background: #141412;
+  --foreground: #EEECEA;
+  --card: #1E1E1C;
+  --card-foreground: #EEECEA;
+  --popover: #242422;
+  --popover-foreground: #EEECEA;
+  --primary: #EEECEA;
+  --primary-foreground: #141412;
+  --secondary: #272724;
+  --secondary-foreground: #EEECEA;
+  --muted: #272724;
+  --muted-foreground: #8A8880;
+  --accent: #EEECEA;
+  --accent-foreground: #141412;
+  --destructive: #7F1D1D;
+  --destructive-foreground: #FCA5A5;
+  --border: rgba(255, 255, 255, 0.07);
+  --input: #272724;
+  --input-background: #272724;
+  --switch-background: #3E3E3A;
+  --ring: rgba(238, 236, 234, 0.2);
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: #181816;
+  --sidebar-foreground: #EEECEA;
+  --sidebar-primary: #EEECEA;
+  --sidebar-primary-foreground: #141412;
+  --sidebar-accent: #222220;
+  --sidebar-accent-foreground: #EEECEA;
+  --sidebar-border: rgba(255, 255, 255, 0.05);
+  --sidebar-ring: rgba(238, 236, 234, 0.2);
+}
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html, body, #root {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'DM Sans', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html {
+    font-size: var(--font-size);
+  }
+
+  /* Hide scrollbars by default, show on hover */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+  }
+  *:hover {
+    scrollbar-color: rgba(128, 128, 120, 0.25) transparent;
+  }
+  ::-webkit-scrollbar { width: 5px; height: 5px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: transparent; border-radius: 3px; }
+  *:hover::-webkit-scrollbar-thumb { background: rgba(128, 128, 120, 0.25); }
+
+  h1 {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.4;
+  }
+  h2 {
+    font-size: var(--text-xl);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.4;
+  }
+  h3 {
+    font-size: var(--text-lg);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+  h4 {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+  label {
+    font-size: var(--text-sm);
+    font-weight: var(--font-weight-medium);
+  }
+  button {
+    font-size: var(--text-sm);
+    font-weight: var(--font-weight-medium);
+  }
+  input {
+    font-size: var(--text-sm);
+    font-weight: var(--font-weight-normal);
+  }
+
+  .prose {
+    max-width: 100%;
+  }
+  .prose p {
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+}
+
+/* Accessibility settings overrides */
+:root.text-scale-100 {
+  --font-size: 16px;
+}
+:root.text-scale-115 {
+  --font-size: 18.4px;
+}
+:root.text-scale-130 {
+  --font-size: 20.8px;
+}
+
+:root.accessibility-high-contrast {
+  --background: #FFFFFF;
+  --foreground: #000000;
+  --card: #FFFFFF;
+  --card-foreground: #000000;
+  --popover: #FFFFFF;
+  --popover-foreground: #000000;
+  --primary: #000000;
+  --primary-foreground: #FFFFFF;
+  --secondary: #E5E5E5;
+  --secondary-foreground: #000000;
+  --muted: #E5E5E5;
+  --muted-foreground: #222222;
+  --accent: #000000;
+  --accent-foreground: #FFFFFF;
+  --border: #000000;
+  --input: #E5E5E5;
+  --sidebar: #F5F5F5;
+  --sidebar-foreground: #000000;
+  --sidebar-border: #000000;
+}
+
+.dark.accessibility-high-contrast, :root.accessibility-high-contrast .dark {
+  --background: #000000;
+  --foreground: #FFFFFF;
+  --card: #000000;
+  --card-foreground: #FFFFFF;
+  --popover: #000000;
+  --popover-foreground: #FFFFFF;
+  --primary: #FFFFFF;
+  --primary-foreground: #000000;
+  --secondary: #1F1F1F;
+  --secondary-foreground: #FFFFFF;
+  --muted: #1F1F1F;
+  --muted-foreground: #E0E0E0;
+  --accent: #FFFFFF;
+  --accent-foreground: #000000;
+  --border: #FFFFFF;
+  --input: #1F1F1F;
+  --sidebar: #0F0F0F;
+  --sidebar-foreground: #FFFFFF;
+  --sidebar-border: #FFFFFF;
+}
+
+.accessibility-high-contrast * {
+  border-color: var(--border) !important;
+}
+
+.accessibility-dyslexic,
+.accessibility-dyslexic * {
+  font-family: 'OpenDyslexic', 'Comic Sans MS', sans-serif !important;
+  letter-spacing: 0.05em;
+  word-spacing: 0.1em;
+  line-height: 1.625 !important;
+}

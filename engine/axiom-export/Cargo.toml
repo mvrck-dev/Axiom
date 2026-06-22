@@ -1,0 +1,9 @@
+[package]
+name = "axiom-export"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+axiom-core = { path = "../axiom-core" }
+serde = { workspace = true }
+serde_json = { workspace = true }
